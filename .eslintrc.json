@@ -1,0 +1,97 @@
+{
+  "env": {
+    "browser": true,
+    "es2021": true
+  },
+  "extends": [
+    "plugin:react/recommended",
+    "plugin:react/jsx-runtime",
+    "plugin:@typescript-eslint/recommended",
+    "standard-with-typescript",
+    "plugin:storybook/recommended"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": "latest",
+    "sourceType": "module",
+    "project": ["./tsconfig.json"]
+  },
+  "plugins": [
+    "react",
+    "@typescript-eslint",
+    "react-hooks",
+    "prefer-arrow",
+    "react-prefer-function-component"
+  ],
+  "rules": {
+    "react/self-closing-comp": "error",
+    "react/button-has-type": "error",
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "warn",
+    "@typescript-eslint/semi": "off",
+    "@typescript-eslint/triple-slash-reference": "off",
+    "prefer-arrow/prefer-arrow-functions": "error",
+    "react-prefer-function-component/react-prefer-function-component": "error",
+    "camelcase": "error",
+    "@typescript-eslint/member-delimiter-style": [
+      "error",
+      {
+        "singleline": {
+          "delimiter": "semi",
+          "requireLast": true
+        }
+      }
+    ],
+    "react/no-unescaped-entities": "off",
+    "no-console": "warn",
+    "@typescript-eslint/comma-dangle": "off",
+    "@typescript-eslint/consistent-type-imports": [
+      "error",
+      {
+        "prefer": "type-imports",
+        "disallowTypeAnnotations": true,
+        "fixStyle": "separate-type-imports"
+      }
+    ],
+    "import/order": [
+      "error",
+      {
+        "groups": [
+          "builtin",
+          "external",
+          "internal",
+          "parent",
+          "sibling",
+          "index",
+          "object",
+          "type"
+        ]
+      }
+    ],
+    "import/no-default-export": "error",
+    "arrow-body-style": ["warn", "as-needed"],
+    "react/prop-types": "error",
+    "@typescript-eslint/strict-boolean-expressions": "off",
+    "multiline-ternary": "off",
+    "@typescript-eslint/indent": "off"
+  },
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  },
+  "ignorePatterns": "vite.config.ts",
+  "overrides": [
+    {
+      "files": ["*.stories.tsx"],
+      "rules": {
+        "import/no-default-export": ["off"],
+        "import/no-anonymous-default-export": ["off"],
+        "@typescript-eslint/consistent-type-assertions": "off"
+      }
+    }
+  ]
+}
